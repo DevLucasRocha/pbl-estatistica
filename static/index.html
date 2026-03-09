@@ -5,32 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auditoria Estatística - PBL</title>
     <link rel="stylesheet" href="/static/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Painel de Auditoria</h1>
-            <p>Auditoria Estatística - PBL de Estatística Decisória</p>
-            
-            <div class="team-info" style="margin: 20px auto; padding: 15px; background-color: #f4f7f6; border-radius: 8px; border-left: 4px solid #2563eb; max-width: 800px; text-align: left;">
-                <h3 style="margin: 0 0 10px 0; color: #1e40af; font-size: 1.2rem;">Equipe: Os Inquestionáveis</h3>
-                <p style="margin: 0; font-size: 0.95rem; color: #4b5563; line-height: 1.5;">
-                    <strong>Integrantes:</strong> Lucas Henrique Souza de Santana da Rocha Santos, João Pedro Santos, Anderson Fonseca Serra, Cauan Dino Penha, Filipe Santos Barros, Victor Gabriel Conceição Pereira.
+            <div class="header-titles">
+                <h1>Painel de Auditoria</h1>
+                <p>Auditoria Estatística - PBL de Estatística Decisória</p>
+            </div>
+
+            <div class="team-card fade-in">
+                <h3 class="team-title">Equipe: Os Inquestionáveis</h3>
+                <p class="team-members">
+                    <strong>Integrantes:</strong> Lucas Henrique Souza de Santana da Rocha Santos, João Pedro Santos, Anderson Fonseca Serra, Cauan Dino Penha, Filipe Santos Barros e Victor Gabriel Conceição Pereira.
                 </p>
             </div>
+
             <button id="run-audit-btn" class="btn">Executar Auditoria</button>
         </header>
 
         <main id="dashboard" class="hidden fade-in">
             <section class="verdict-section" id="verdict-card">
                 <h2 id="verdict-title">Status: Aguardando Auditoria</h2>
-                <div class="verdict-details" id="verdict-details"></div>
+                <div class="verdict-details" id="verdict-details">Clique no botão acima para processar os dados.</div>
             </section>
 
             <section class="metrics-grid">
                 <div class="card">
-                    <h3>Tendência Central</h3>
+                    <div class="card-header">
+                        <h3>Tendência Central</h3>
+                    </div>
                     <ul>
                         <li><span class="label">Média Aritmética:</span> <span class="value" id="val-media"></span></li>
                         <li><span class="label">Média Geométrica:</span> <span class="value" id="val-media-geom"></span></li>
@@ -40,7 +45,9 @@
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Dispersão</h3>
+                    <div class="card-header">
+                        <h3>Dispersão</h3>
+                    </div>
                     <ul>
                         <li><span class="label">MAD:</span> <span class="value" id="val-mad"></span></li>
                         <li><span class="label">Variância:</span> <span class="value" id="val-variancia"></span></li>
@@ -51,8 +58,10 @@
             </section>
 
             <section class="tables-section">
-                <div class="table-container">
-                    <h3>Quartis e Percentis</h3>
+                <div class="table-container card">
+                    <div class="card-header">
+                        <h3>Quartis e Percentis</h3>
+                    </div>
                     <table>
                         <thead>
                             <tr>
@@ -65,8 +74,10 @@
                     </table>
                 </div>
 
-                <div class="table-container">
-                    <h3>Decis</h3>
+                <div class="table-container card">
+                    <div class="card-header">
+                        <h3>Decis</h3>
+                    </div>
                     <table>
                         <thead>
                             <tr>
