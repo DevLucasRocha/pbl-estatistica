@@ -57,7 +57,7 @@ def get_auditoria():
     try:
 
         # Lê a planilha Excel
-        df = pd.read_excel("ANEXO PBL 1 ESTATÍSTICA 2026_1 (1).xls", skiprows=2)
+        df = pd.read_excel("ANEXO PBL 1 ESTATÍSTICA 2026_1.xls", skiprows=2)
         
         # Verifica se existe a coluna "Margem (%)"
         if "Margem (%)" in df.columns:
