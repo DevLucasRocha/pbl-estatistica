@@ -268,14 +268,50 @@ td:last-child {
 }
 
 /* ================= ANIMAÇÕES ================= */
-.hidden { display: none !important; }
+.hidden { 
+    display: none !important; 
+}
 
-.fade-in { animation: fadeIn 0.6s ease-out forwards; }
+/* Animação suave para a equipe e o fundo do painel */
+.fade-in { 
+    animation: fadeIn 0.5s ease-out; 
+}
 
+/* Efeito Cascata: Faz os dados surgirem um por um quando o painel perde a classe .hidden */
+#dashboard:not(.hidden) .verdict-section {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+#dashboard:not(.hidden) .metrics-grid .card:nth-child(1) {
+    animation: slideUp 0.5s ease-out 0.1s forwards;
+    opacity: 0; /* Esconde até a animação começar */
+}
+
+#dashboard:not(.hidden) .metrics-grid .card:nth-child(2) {
+    animation: slideUp 0.5s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+#dashboard:not(.hidden) .tables-section .table-container:nth-child(1) {
+    animation: slideUp 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+#dashboard:not(.hidden) .tables-section .table-container:nth-child(2) {
+    animation: slideUp 0.5s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+/* Keyframes (As regras do movimento) */
 @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(25px);
     }
     to {
         opacity: 1;
