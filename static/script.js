@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnAuditoria.textContent = "Processando Auditoria...";
         btnAuditoria.disabled = true;
 
-        fetch("http://127.0.0.1:8000/api/auditoria")
+        fetch("/api/auditoria")
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Erro na resposta do servidor");
